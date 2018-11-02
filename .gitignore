@@ -8,6 +8,12 @@
 ehthumbs.db
 Thumbs.db
 
-# virtualenvx #
+# virtualenv #
 ######################
 DBProject_env
+
+# sublime text project stuff #
+######################
+DBProject.sublime-project
+DBProject.sublime-workspace
+
