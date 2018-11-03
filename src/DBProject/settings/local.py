@@ -25,8 +25,9 @@ SECRET_KEY = '7ghhjwpl70m)h6o^g*8^)v(xyt*i=ngr-b)=k_#g##e&%^@_2*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['0.0.0.0',
+		 'dbproject.hopto.org'
+		 '10.0.0.125']
 
 # Application definition
 
