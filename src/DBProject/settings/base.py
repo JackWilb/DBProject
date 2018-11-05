@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0',
 		 'dbproject.hopto.org',
-		 '10.0.0.125']
+		 '10.0.0.125',
+                 '73.20.21.50']
 
 # Application definition
 
