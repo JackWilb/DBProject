@@ -8,6 +8,7 @@ Thanks for visiting this page. Above you can see the source code used to create 
 ## Commands required to setup the server
 
 ```
+source /home/pi/websites/DBProject/DBProject_env/bin/activate
 sudo /usr/local/bin/noip2
 curl ipinfo.io/ip
 uwsgi --socket :8001 --module DBProject.wsgi
