@@ -26,8 +26,8 @@ SECRET_KEY = '7ghhjwpl70m)h6o^g*8^)v(xyt*i=ngr-b)=k_#g##e&%^@_2*'
 DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0',
-		 'dbproject.hopto.org',
-		 '10.0.0.125',
+         'dbproject.hopto.org',
+         '10.0.0.125',
                  '73.20.21.50']
 
 # Application definition
@@ -78,8 +78,10 @@ WSGI_APPLICATION = 'DBProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+    'OPTIONS': {
+        'read_default_file': '/home/pi/websites/DBProject/DB.cnf'
+    },    
     }
 }
 
