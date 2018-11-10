@@ -41,8 +41,9 @@ h1 {
 }
 
 .content {
-	width: 100%;
+	width: 95%;
 	padding: 0px 8px;
+	align-self: center;
 }
 
 .img-container {
