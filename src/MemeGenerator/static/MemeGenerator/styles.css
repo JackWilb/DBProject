@@ -6,7 +6,7 @@ body {
 
 .header {
 	font-family: Verdana, sans-serif;
-	color: #EEF1EF;
+	background-color: #EEF1EF;
 	padding-top: 8px;
 	padding-right: 16px;
 	padding-bottom: 8px;
@@ -15,4 +15,5 @@ body {
 
 .navigation {
 	float: right;
+	white-space: nowrap;
 }
