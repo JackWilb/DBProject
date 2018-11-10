@@ -13,14 +13,19 @@ body {
 	padding-left: 16px;
 	white-space: nowrap;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	height: 82px;
 }
 
 .navigation {
 	float: right;
 	font-size: 16pt;
-	padding-top: 25px;
+	padding-top: 30px;
 }
 
 h1 {
 	float:left;
+}
+
+.footer {
+	text-align: center;
 }
