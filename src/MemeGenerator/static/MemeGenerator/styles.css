@@ -24,8 +24,9 @@ body {
 
 .navigation a, .navigation a:visited {
 	text-decoration: none;
-	cursor: auto;
+	cursor: pointer;
 	color: inherit;
+	padding: 14px 16px;
 }
 
 .navigation a:hover {
