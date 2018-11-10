@@ -1,8 +1,18 @@
-.nav {
-	font-size: 100pt;
-}
-
 body {
+	font-family: Georgia, serif;
 	background-color: #EEF1EF;
 	color: #1C2321;
+}
+
+.header {
+	font-family: Verdana, sans-serif;
+	color: #EEF1EF;
+	padding-top: 8px;
+	padding-right: 16px;
+	padding-bottom: 8px;
+	padding-left: 16px;
+}
+
+.navigation {
+	float: right;
 }
