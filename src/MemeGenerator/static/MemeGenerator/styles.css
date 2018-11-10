@@ -22,6 +22,17 @@ body {
 	padding-top: 30px;
 }
 
+.navigation a, .navigation a:visited {
+	text-decoration: none;
+	cursor: auto;
+	color: inherit;
+}
+
+.navigation a:hover {
+	background-color: #5E6572;
+	color: inherit;
+}
+
 h1 {
 	float:left;
 }
