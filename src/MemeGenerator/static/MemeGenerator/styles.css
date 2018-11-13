@@ -52,16 +52,16 @@ h1 {
 }
 
 .img-container img {
-	width: 98%;
-	padding: 0px 1%;
+	width: 90%;
+	padding: 0px 5%;
 }
 
 .img-container h3 {
-	padding: 0px 1%;
+	padding: 0px 5%;
 }
 
 .img-container p {
-	padding: 0px 1%;
+	padding: 0px 5%;
 }
 
 .footer {
