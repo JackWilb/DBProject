@@ -40,6 +40,10 @@ h1 {
 	float:left;
 }
 
+h2 {
+	padding: 0px 2.5%;
+}
+
 .content {
 	width: 100%;
 	padding: 0px 0px;
