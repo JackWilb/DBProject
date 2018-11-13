@@ -51,8 +51,16 @@ h1 {
 	float: left;
 }
 
-img {
+.img_container img {
 	width: 98%;
+	padding: 0px 1%;
+}
+
+.img-container h3 {
+	padding: 0px 1%;
+}
+
+.img-container p {
 	padding: 0px 1%;
 }
 
