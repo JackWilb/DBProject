@@ -77,6 +77,5 @@ FOREIGN KEY (userid) REFERENCES User (id),
 FOREIGN KEY (tagid) REFERENCES Tag (id)
 );
 
-INSERT INTO 
 
 
