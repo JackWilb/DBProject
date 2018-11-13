@@ -41,13 +41,19 @@ h1 {
 }
 
 .content {
-	width: 95%;
-	padding: 0px 8px;
+	width: 100%;
+	padding: 0px 0px;
 	align-self: center;
 }
 
 .img-container {
-	width: 49.9999%;
+	width: 50%;
+	float: left;
+}
+
+img {
+	width: 98%;
+	padding: 0px 1%;
 }
 
 .footer {
