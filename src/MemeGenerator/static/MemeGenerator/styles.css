@@ -70,12 +70,15 @@ h2 {
 
 .postnav {
 	padding: 0px 2.5%;
+	text-align: center;
 }
 
 .postnav a, .postnav a:visited{
 	text-decoration: none;
 	cursor: pointer;
 	color: inherit;
+	background-color: #A7ABB2;
+	padding: 10px;
 }
 
 .footer {
