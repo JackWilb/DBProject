@@ -6,3 +6,6 @@ def index(request):
 
 def login(request):
 	return render(request, 'MemeGenerator/login.html')
+
+def makeameme(request):
+	return render(request, 'MemeGenerator/makeameme.html')
