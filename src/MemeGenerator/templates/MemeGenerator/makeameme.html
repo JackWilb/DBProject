@@ -12,19 +12,21 @@
 
 <h2>Select a meme</h2>
 
-<form>
+<form action="">
 		Meme: <br>
 		<select id="country" name="country">
-			<option value="australia">Australia</option>
-			<option value="canada">Canada</option>
-			<option value="usa">USA</option>
+			<option value="{{ grumpyCat }}">Grumpy Cat</option>
+			<option value="{{ socAwkPenguin }}">Socially Awkward Penguin</option>
+			<option value="{{ rickAstley }}">Rick Astley</option>
 		</select> <br>
 
 		Top Text:<br>
 		<input type="text" name="toptext"><br>
 
 		Bottom Text:<br>
-		<input type="text" name="bottomtext">
+		<input type="text" name="bottomtext"> <br>
+
+		<input type="submit" value="Submit">
 </form>
 
 {% include "MemeGenerator/includes/footer.html" %}
