@@ -12,22 +12,30 @@
 
 <h2>Select a meme</h2>
 
-<form action="">
-		Meme: <br>
-		<select id="country" name="country">
-			<option value="{{ grumpyCat }}">Grumpy Cat</option>
-			<option value="{{ socAwkPenguin }}">Socially Awkward Penguin</option>
-			<option value="{{ rickAstley }}">Rick Astley</option>
-		</select> <br>
+<div class="content">
+	<div class="form-container">
+		<form action="">
+				Meme: <br>
+				<select id="country" name="country">
+					<option value="{{ grumpyCat }}">Grumpy Cat</option>
+					<option value="{{ socAwkPenguin }}">Socially Awkward Penguin</option>
+					<option value="{{ rickAstley }}">Rick Astley</option>
+				</select> <br>
 
-		Top Text:<br>
-		<input type="text" name="toptext"><br>
+				Top Text:<br>
+				<input type="text" name="toptext"><br>
 
-		Bottom Text:<br>
-		<input type="text" name="bottomtext"> <br>
+				Bottom Text:<br>
+				<input type="text" name="bottomtext"> <br>
 
-		<input type="submit" value="Submit">
-</form>
+				<input type="submit" value="Submit">
+		</form>
+	</div>
+
+	<div class="img-container"> 
+		<img src="{% static 'MemeGenerator/grumpyCat.jpg' %}">
+	</div>
+</div>
 
 {% include "MemeGenerator/includes/footer.html" %}
 
