@@ -16,19 +16,19 @@
 
 <div class="content">
 	<div class="form-container">
-		<form action="">
+		<form action="" method="POST">{% csrf_token %}
 				Meme: <br>
-				<select id="country" name="country">
+				<select id="memeTemplate" name="memeTemplate">
 					<option value="{{ grumpyCat }}">Grumpy Cat</option>
 					<option value="{{ socAwkPenguin }}">Socially Awkward Penguin</option>
 					<option value="{{ rickAstley }}">Rick Astley</option>
 				</select> <br>
 
 				Top Text:<br>
-				<input type="text" name="toptext"><br>
+				<input type="text" name="topText"><br>
 
 				Bottom Text:<br>
-				<input type="text" name="bottomtext"> <br>
+				<input type="text" name="bottomText"> <br>
 
 				<input type="submit" value="Submit">
 		</form>
