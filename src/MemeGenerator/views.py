@@ -18,7 +18,12 @@ def login(request):
 
 def makeameme(request):
 	if request.method == 'POST':
+		# Get the data
+
+		# Build the meme and save
+
+		# Redirect off the page so we know it worked
 		return redirect('/static/MemeGenerator/styles.css')
 	else:
-		return redirect('/makeameme')
-	return render(request, 'MemeGenerator/makeameme.html')
+		# If not post then go to the page so we can make a post
+		return render(request, 'MemeGenerator/makeameme.html')
