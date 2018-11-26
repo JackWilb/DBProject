@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from MemeGenerator.models import Template
 
 def index(request):
 	# Get 2 memes from our database
-	meme1 = Templates.objects.get(id=1)
-	meme2 = Templates.objects.get(id=2)
+	meme1 = Template.objects.get(id=1)
+	meme2 = Template.objects.get(id=2)
 
 	context = {
 		'leftMeme': meme1,
