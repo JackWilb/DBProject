@@ -19,7 +19,7 @@ def login(request):
 def makeameme(request):
 	if request.method == 'POST':
 		# Get the data
-		data = request.POST.get()
+		data = request.POST
 		# Build the meme and save
 		print(data)
 		# Input data into database
