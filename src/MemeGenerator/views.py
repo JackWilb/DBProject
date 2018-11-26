@@ -22,6 +22,8 @@ def makeameme(request):
 
 		# Build the meme and save
 
+		# Input data into database
+
 		# Redirect off the page so we know it worked
 		return redirect('/static/MemeGenerator/styles.css')
 	else:

@@ -10,7 +10,18 @@
 
 </div>
 
-<p>This might be a login form one day</p>
+<h1>Login</h1>
+
+<div class="content">
+	<div class="form-container">
+		<form action="" method="POST">{% csrf_token %}
+				Account Name:<br>
+				<input type="text" name="accountName"> <br>
+
+				<input type="submit" value="Submit">
+		</form>
+	</div>
+</div>
 
 {% include "MemeGenerator/includes/footer.html" %}
 
