@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from MemeGenerator.models import Template
 
@@ -17,4 +17,8 @@ def login(request):
 	return render(request, 'MemeGenerator/login.html')
 
 def makeameme(request):
+	if request.method == 'POST'
+		return redirect('/static/MemeGenerator/styles.css')
+	else:
+		return redirect('/makeameme')
 	return render(request, 'MemeGenerator/makeameme.html')
