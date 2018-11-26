@@ -17,7 +17,7 @@ def login(request):
 	return render(request, 'MemeGenerator/login.html')
 
 def makeameme(request):
-	if request.method == 'POST'
+	if request.method == 'POST':
 		return redirect('/static/MemeGenerator/styles.css')
 	else:
 		return redirect('/makeameme')
