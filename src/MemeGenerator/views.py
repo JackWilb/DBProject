@@ -26,19 +26,19 @@ def makeameme(request):
 		print()
 		file_path = 1
 		# Input data into database
-			# Input text into DB
-			new_row_text = Text(top = topText, bottom = bottomText)
-			new_row_text.save();
+		# Input text into DB
+		new_row_text = Text(top = topText, bottom = bottomText)
+		new_row_text.save();
 
-			# See which memeTemplate
-			if (memeTemplate == '1'):
-				meme_id = 1
-			else if (memeTemplate == '2'):
-				meme_id = 3
-			else:
-				meme_id = 2
+		# See which memeTemplate
+		if (memeTemplate == '1'):
+			meme_id = 1
+		else if (memeTemplate == '2'):
+			meme_id = 3
+		else:
+			meme_id = 2
 
-			new_row_meme = Meme(templateid = meme_id, textid = Text.objects.get(top = topText).id, image = file_path, userid = NULL)
+		new_row_meme = Meme(templateid = meme_id, textid = Text.objects.get(top = topText).id, image = file_path, userid = NULL)
 		# Redirect off the page so we know it worked
 		return redirect('/static/MemeGenerator/styles.css')
 	else:
