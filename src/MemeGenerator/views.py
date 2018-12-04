@@ -40,7 +40,7 @@ def makeameme(request):
 
 		new_row_meme = Meme(
 			templateid = Template.objects.get(id=meme_id), 
-			textid = Text.objects.get(top = topText).id, 
+			textid = Text.objects.get(top = topText), 
 			image = file_path, 
 			userid = None
 		)
