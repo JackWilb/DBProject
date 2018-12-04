@@ -17,7 +17,7 @@ def login(request):
 	return render(request, 'MemeGenerator/login.html')
 
 def makeameme(request):
-	if request.method == 'POST' and ReportForm(request.POST).is_valid():
+	if request.method == 'POST':
 		# Get the data
 		memeTemplate = request.POST.get('memeTemplate')
 		topText = request.POST.get('topText')
