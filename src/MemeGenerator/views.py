@@ -38,7 +38,7 @@ def makeameme(request):
 		else:
 			meme_id = 2
 
-		new_row_meme = Meme(templateid = meme_id, textid = Text.objects.get(top = topText).id, image = file_path, userid = NULL)
+		new_row_meme = Meme(templateid = meme_id, textid = Text.objects.get(top = topText).id, image = file_path, userid = None)
 		# Redirect off the page so we know it worked
 		return redirect('/static/MemeGenerator/styles.css')
 	else:
