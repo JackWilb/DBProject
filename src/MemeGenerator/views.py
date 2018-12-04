@@ -33,7 +33,7 @@ def makeameme(request):
 		# See which memeTemplate
 		if (memeTemplate == '1'):
 			meme_id = 1
-		else if (memeTemplate == '2'):
+		elif (memeTemplate == '2'):
 			meme_id = 3
 		else:
 			meme_id = 2
