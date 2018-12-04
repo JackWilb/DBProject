@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from MemeGenerator.models import Template
+from MemeGenerator.models import Template, Meme, Text
 
 def index(request):
 	# Get 2 memes from our database
@@ -17,13 +17,28 @@ def login(request):
 	return render(request, 'MemeGenerator/login.html')
 
 def makeameme(request):
-	if request.method == 'POST':
+	if request.method == 'POST' and ReportForm(request.POST).is_valid():
 		# Get the data
-		data = request.REQUEST
+		memeTemplate = request.POST.get('memeTemplate')
+		topText = request.POST.get('topText')
+		bottomText = request.POST.get('bottomText')
 		# Build the meme and save
-		print(data)
+		print()
+		file_path = 1
 		# Input data into database
+			# Input text into DB
+			new_row_text = Text(top = topText, bottom = bottomText)
+			new_row_text.save();
 
+			# See which memeTemplate
+			if (memeTemplate == '1'):
+				meme_id = 1
+			else if (memeTemplate == '2'):
+				meme_id = 3
+			else:
+				meme_id = 2
+
+			new_row_meme = Meme(templateid = meme_id, textid = Text.objects.get(top = topText).id, image = file_path, userid = NULL)
 		# Redirect off the page so we know it worked
 		return redirect('/static/MemeGenerator/styles.css')
 	else:
