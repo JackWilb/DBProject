@@ -38,12 +38,14 @@ def makeameme(request):
 		else:
 			meme_id = 2
 
+		# Construct a new meme and save it to the database
 		new_row_meme = Meme(
 			templateid = Template.objects.get(id=meme_id), 
 			textid = Text.objects.get(top = topText), 
 			image = file_path, 
 			userid = None
 		)
+		new_row_mem.save()
 		# Redirect off the page so we know it worked
 		return redirect('/static/MemeGenerator/styles.css')
 	else:
