@@ -45,7 +45,7 @@ def makeameme(request):
 			image = file_path, 
 			userid = None
 		)
-		new_row_mem.save()
+		new_row_meme.save()
 		# Redirect off the page so we know it worked
 		return redirect('/static/MemeGenerator/styles.css')
 	else:
