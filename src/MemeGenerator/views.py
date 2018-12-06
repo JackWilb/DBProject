@@ -39,8 +39,8 @@ def makeameme(request):
 		random_file_number = math.floor(random.random() * 4294967295)
 
 		file_path_root = "~/websites/DBProject/src/MemeGenerator/"
-		command1 = "width=`identify -format %w " + file_path_root + str(template.image) +  "`;   convert -background '#0008' -fill white -font Impact -gravity center -size ${width}x30 caption:'" + str(topText) + "' rickAstley.jpg +swap -gravity south -composite " + file_path_root + "media/MemegGenerator/temp.jpg"
-		command2 = "width=`identify -format %w " + file_path_root + "media/MemegGenerator/temp.jpg`;   convert -background '#0008' -fill white -font Impact -gravity center -size ${width}x30 caption:'" + str(topText) + "' rickAstley.jpg +swap -gravity south -composite  " + file_path_root + "media/MemegGenerator/temp.jpg"
+		command1 = "width=`identify -format %w " + file_path_root +  "static/MemeGenerator" +str(template.image) +  "`;   convert -background '#0008' -fill white -font Impact -gravity center -size ${width}x30 caption:'" + str(topText) + "' rickAstley.jpg +swap -gravity south -composite " + file_path_root + "media/MemegGenerator/temp.jpg"
+		command2 = "width=`identify -format %w " + file_path_root + "media/MemeGenerator/temp.jpg`;   convert -background '#0008' -fill white -font Impact -gravity center -size ${width}x30 caption:'" + str(topText) + "' rickAstley.jpg +swap -gravity south -composite  " + file_path_root + "media/MemegGenerator/temp.jpg"
 		os.system(command1)
 		os.system(command2)
 
@@ -53,7 +53,7 @@ def makeameme(request):
 		new_row_meme = Meme(
 			templateid = Template.objects.get(id=meme_id), 
 			textid = Text.objects.get(top = topText), 
-			image = "/media/MemegGenerator/temp.jpg", 
+			image = "/media/MemeGenerator/temp.jpg", 
 			userid = None
 		)
 		new_row_meme.save()
