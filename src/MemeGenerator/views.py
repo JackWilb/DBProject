@@ -4,6 +4,7 @@ from MemeGenerator.models import Template, Meme, Text
 
 import os
 import math
+import random
 
 def index(request):
 	# Get 2 memes from our database
@@ -52,7 +53,7 @@ def makeameme(request):
 		new_row_meme = Meme(
 			templateid = Template.objects.get(id=meme_id), 
 			textid = Text.objects.get(top = topText), 
-			image = file_path, 
+			image = "/media/MemegGenerator/temp.jpg", 
 			userid = None
 		)
 		new_row_meme.save()
