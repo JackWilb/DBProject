@@ -92,5 +92,7 @@ FOREIGN KEY (tagid) REFERENCES Tag (id)
 
 
 INSERT INTO Template (image) VALUES
-('static/MemeGenerator/grumpyCat.jpg')
+('static/MemeGenerator/grumpyCat.jpg'),
+('static/MemeGenerator/rickAstley.jpg'),
+('static/MemeGenerator/sociallyAwkwardPenguin.jpg');
 
