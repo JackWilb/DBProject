@@ -58,7 +58,7 @@ def makeameme(request):
 		)
 		new_row_meme.save()
 		# Redirect off the page so we know it worked
-		return redirect('/index.html')
+		return redirect('')
 	else:
 		# If not post then go to the page so we can make a post
 		return render(request, 'MemeGenerator/makeameme.html')
