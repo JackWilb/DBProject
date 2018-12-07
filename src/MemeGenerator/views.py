@@ -16,7 +16,7 @@ def index(request):
 
 	# Get Memes based on random indicies
 	meme1 = Meme.objects.all()[randomindex1]
-	meme1 = Meme.objects.all()[randomindex2]
+	meme2 = Meme.objects.all()[randomindex2]
 
 	context = {
 		'leftMeme': meme1,
