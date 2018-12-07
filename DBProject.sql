@@ -44,6 +44,7 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 memeid INT UNSIGNED NOT NULL,
 userid INT UNSIGNED NOT NULL,
 reactionid INT UNSIGNED NOT NULL,
+name VARCHAR(64) NOT NULL,
 
 FOREIGN KEY (userid) REFERENCES User (id),
 FOREIGN KEY (memeid) REFERENCES Meme (id)
@@ -68,31 +69,49 @@ FOREIGN KEY (memeid) REFERENCES Meme (id),
 FOREIGN KEY (tagid) REFERENCES Tag (id)
 );
 
-CREATE TABLE UserTemplate (
-id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-userid INT UNSIGNED NOT NULL,
-templateid INT UNSIGNED NOT NULL,
-
-FOREIGN KEY (userid) REFERENCES User (id),
-FOREIGN KEY (templateid) REFERENCES Template (id)
-);
-
 CREATE TABLE TagUser (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 userid INT UNSIGNED NOT NULL,
-tagid INT UNSIGNED NOT NULL,
+memetagid INT UNSIGNED NOT NULL,
 
 FOREIGN KEY (userid) REFERENCES User (id),
-FOREIGN KEY (tagid) REFERENCES Tag (id)
+FOREIGN KEY (memetagid) REFERENCES MemeTag (id)
 );
 
 
 
--- BASE INSERTS 
-
+-- BASE INSERTS TO MAKE SITE WORK
 
 INSERT INTO Template (image) VALUES
 ('static/MemeGenerator/grumpyCat.jpg'),
 ('static/MemeGenerator/rickAstley.jpg'),
 ('static/MemeGenerator/sociallyAwkwardPenguin.jpg');
+
+INSERT INTO User (login) VALUES
+('admin');
+
+INSERT INTO Text (top, bottom) VALUES
+("Hey, what's up?", "Good, you?"),
+("Never Gonna Give You Up","");
+
+INSERT INTO Meme (templateid, textid, image, userid) VALUES 
+(3, 1, '/media/MemeGenerator/admin1.jpg', 1),
+(2, 2, '/media/MemeGenerator/admin2.jpg', 1);
+
+INSERT INTO Tag (name) VALUES 
+('Funny'),
+('Edgy'),
+('Standard'),
+('True');
+
+INSERT INTO MemeTag (memeid, tagid) VALUES
+(1, 1),
+(1, 4),
+(2, 3);
+
+INSERT INTO TagUser (userid, memetagid) VALUES
+(1, 1);
+(1, 2);
+(1, 3);
+
 
