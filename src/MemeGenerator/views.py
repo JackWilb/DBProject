@@ -7,9 +7,16 @@ import math
 import random
 
 def index(request):
-	# Get 2 memes from our database
-	meme1 = Template.objects.get(id=1)
-	meme2 = Template.objects.get(id=2)
+	# Get 2 random indicies
+	randomindex1 = random.randint(0, Meme.objects.count() - 1)
+	randomindex2 = random.randint(0, Meme.objects.count() - 1)
+
+	if (randomindex1 == randomindex2):
+		randomindex2 = random.randint(0, Meme.objects.count() - 1)
+
+	# Get Memes based on random indicies
+	meme1 = Meme.objects.all()[randomindex1]
+	meme1 = Meme.objects.all()[randomindex2]
 
 	context = {
 		'leftMeme': meme1,
