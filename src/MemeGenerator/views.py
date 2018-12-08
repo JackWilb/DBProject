@@ -77,4 +77,4 @@ def makeameme(request):
 		# Set context
 		context = {'tags': tags}
 
-		return render(request, 'MemeGenerator/makeameme.html')
+		return render(request, 'MemeGenerator/makeameme.html', context)
