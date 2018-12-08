@@ -82,6 +82,8 @@ h2 {
 	text-decoration: none;
 	cursor: pointer;
 	color: inherit;
+	background-color: #A7ABB2;
+	padding: 10px;
 }
 
 select {
