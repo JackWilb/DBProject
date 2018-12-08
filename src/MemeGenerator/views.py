@@ -111,4 +111,4 @@ def makeanaccount(request):
 		return redirect('/login')
 
 	else:
-		return render(request, 'MemeGenerator/makeatag.html')
+		return render(request, 'MemeGenerator/makeanaccount.html')
