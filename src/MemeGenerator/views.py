@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from MemeGenerator.models import Template, Meme, Text, Tag, MemeTag
+from MemeGenerator.models import Template, Meme, Text, Tag, Memetag
 
 import os
 import math
