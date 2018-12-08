@@ -78,9 +78,11 @@ h2 {
 	padding: 0px 5%;
 }
 
-.form-container a, a:hover {
-	background-color: #A7ABB2;
+.form-container a, .form-container a:visited {
+	text-decoration: none;
+	cursor: pointer;
 	color: inherit;
+	padding: 14px 16px;
 }
 
 select {
