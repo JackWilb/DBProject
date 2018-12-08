@@ -1,0 +1,32 @@
+{% extends "MemeGenerator/header.html" %}
+
+{% block content %}
+
+<div class="header">
+
+{% include "MemeGenerator/includes/logo.html" %}
+
+{% include "MemeGenerator/includes/navigation.html" %}
+
+</div>
+
+<h2>Make A Meme</h2>
+
+<div class="content">
+	<div class="form-container">
+		<form action="" method="POST">{% csrf_token %}
+				Tag:<br>
+				<input type="text" name="tag"><br>
+
+				<input type="submit" value="Submit">
+		</form>
+	</div>
+
+	<div class="img-container"> 
+		<img src="{% static 'MemeGenerator/rickAstley.jpg' %}">
+	</div>
+</div>
+
+{% include "MemeGenerator/includes/footer.html" %}
+
+{% endblock %}

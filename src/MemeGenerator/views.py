@@ -29,6 +29,16 @@ def index(request):
 def login(request):
 	return render(request, 'MemeGenerator/login.html')
 
+def makeatag(request):
+	if request.method == 'POST':
+		tag = request.POST.get('tag')
+
+		new_row_Tag = Tag(name = tag)
+		new_row_Tag.save()
+		
+	else:
+		return render(request, 'MemeGenerator/makeatag.html')
+
 def makeameme(request):
 	if request.method == 'POST':
 		# Get the data
