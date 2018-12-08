@@ -32,8 +32,8 @@
 
 				Tags:<br>
 				<select id="tags" multiple="multiple" class="lstSelected">
-					{% for tag in tags %}
-						<option value="{{ tag.id }}">{{ tag.name }}</option>
+					{% for i in range(tags.length()) %}
+						<option value="{{ tags[i].id }}">{{ tags[i].name }}</option>
 					{% endfor %}
 				</select> <br>
 
