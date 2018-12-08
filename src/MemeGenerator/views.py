@@ -31,7 +31,7 @@ def makeatag(request):
 	if request.method == 'POST':
 		tag = request.POST.get('tag')
 
-		if tag:
+		if tag.strip():
 			new_row_Tag = Tag(name = tag)
 			new_row_Tag.save()
 
