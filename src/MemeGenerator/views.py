@@ -70,11 +70,11 @@ def makeameme(request):
 
 		# Input Tags
 		for tag in tags:
-			new_row_MemeTag = MemeTag(
+			new_row_Memetag = Memetag(
 				memeid = new_row_meme,
 				tagid = Tag.objects.get(id=tag)
 			)
-			new_row_MemeTag.save()
+			new_row_Memetag.save()
 
 		# Redirect off the page so we know it worked
 		return redirect('/')
