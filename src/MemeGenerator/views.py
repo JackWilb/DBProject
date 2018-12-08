@@ -31,8 +31,9 @@ def makeatag(request):
 	if request.method == 'POST':
 		tag = request.POST.get('tag')
 
-		new_row_Tag = Tag(name = tag)
-		new_row_Tag.save()
+		if not tag:
+			new_row_Tag = Tag(name = tag)
+			new_row_Tag.save()
 
 		return redirect('/makeameme/')
 
