@@ -35,7 +35,7 @@ def makeameme(request):
 		memeTemplate = request.POST.get('memeTemplate')
 		topText = request.POST.get('topText')
 		bottomText = request.POST.get('bottomText')
-		tags = request.POST.get('tags')
+		tags = request.POST.getlist('tags')
 
 		# Build the meme and save
 		# See which memeTemplate
@@ -75,7 +75,6 @@ def makeameme(request):
 				tagid = Tag.objects.get(id=tag)
 			)
 			new_row_Memetag.save()
-			broken()
 
 		# Redirect off the page so we know it worked
 		return redirect('/')
