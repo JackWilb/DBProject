@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from MemeGenerator.models import Template, Meme, Text, Tag, Memetag
+from MemeGenerator.models import Template, Meme, Text, Tag, Memetag, User
 
 import os
 import math
@@ -99,3 +99,16 @@ def makeameme(request):
 		context = {'tags': tags}
 
 		return render(request, 'MemeGenerator/makeameme.html', context)
+
+def makeanaccount(request):
+	if request.method == 'POST':
+		user = request.POST.get('user')
+
+		if user.strip():
+			new_row_User = Tag(login = user)
+			new_row_User.save()
+
+		return redirect('/login')
+
+	else:
+		return render(request, 'MemeGenerator/makeatag.html')
