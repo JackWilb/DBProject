@@ -71,7 +71,7 @@ def makeameme(request):
 		# Input Tags
 		for tag in tags:
 			new_row_MemeTag = MemeTag(
-				memeid = new_row_meme
+				memeid = new_row_meme,
 				tagid = Tag.objects.get(id=tag)
 			)
 			new_row_MemeTag.save()
