@@ -18,8 +18,6 @@ def index(request):
 	meme1 = Meme.objects.all()[randomindex1]
 	meme2 = Meme.objects.all()[randomindex2]
 
-
-
 	context = {
 		'leftMeme': meme1,
 		'rightMeme': meme2
@@ -35,7 +33,9 @@ def makeatag(request):
 
 		new_row_Tag = Tag(name = tag)
 		new_row_Tag.save()
-		
+
+		return redirect('/makeameme/')
+
 	else:
 		return render(request, 'MemeGenerator/makeatag.html')
 
