@@ -31,7 +31,7 @@
 				<input type="text" name="bottomText"> <br>
 
 				Tags:<br>
-				<select id="tags" multiple="multiple" class="lstSelected">
+				<select id="tags" name="tags" multiple="multiple" class="lstSelected">
 					{% for tag in tags %}
 						<option value="{{ tag.id }}">{{ tag.name }}</option>
 					{% endfor %}
