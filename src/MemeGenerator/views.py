@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from MemeGenerator.models import Template, Meme, Text, Tag
+from MemeGenerator.models import Template, Meme, Text, Tag, MemeTag
 
 import os
 import math
@@ -35,6 +35,7 @@ def makeameme(request):
 		memeTemplate = request.POST.get('memeTemplate')
 		topText = request.POST.get('topText')
 		bottomText = request.POST.get('bottomText')
+		tags = request.POST.get('tags')
 
 		# Build the meme and save
 		# See which memeTemplate
@@ -66,6 +67,14 @@ def makeameme(request):
 			userid = None
 		)
 		new_row_meme.save()
+
+		# Input Tags
+		for tag in tags:
+			new_row_MemeTag = MemeTag(
+				memeid = new_row_meme.id
+				tagid = tag
+			)
+
 		# Redirect off the page so we know it worked
 		return redirect('/')
 	else:
