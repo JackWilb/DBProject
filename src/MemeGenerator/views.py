@@ -75,6 +75,7 @@ def makeameme(request):
 				tagid = Tag.objects.get(id=tag)
 			)
 			new_row_Memetag.save()
+			broken()
 
 		# Redirect off the page so we know it worked
 		return redirect('/')
