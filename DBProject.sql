@@ -102,7 +102,8 @@ INSERT INTO Tag (name) VALUES
 ('Funny'),
 ('Edgy'),
 ('Standard'),
-('True');
+('True'),
+('Spicy');
 
 INSERT INTO MemeTag (memeid, tagid) VALUES
 (1, 1),

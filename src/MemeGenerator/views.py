@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from MemeGenerator.models import Template, Meme, Text
+from MemeGenerator.models import Template, Meme, Text, Tag
 
 import os
 import math
@@ -17,6 +17,8 @@ def index(request):
 	# Get Memes based on random indicies
 	meme1 = Meme.objects.all()[randomindex1]
 	meme2 = Meme.objects.all()[randomindex2]
+
+
 
 	context = {
 		'leftMeme': meme1,
@@ -68,4 +70,11 @@ def makeameme(request):
 		return redirect('/')
 	else:
 		# If not post then go to the page so we can make a post
+
+		# Get Tags to pass into context
+		tags = Tag.objects.all()
+
+		# Set context
+		context = {'tags': tags}
+
 		return render(request, 'MemeGenerator/makeameme.html')
