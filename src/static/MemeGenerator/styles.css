@@ -84,6 +84,8 @@ h2 {
 	color: inherit;
 	background-color: #A7ABB2;
 	padding: 10px;
+	margin: 5px 5%;
+	float: left;
 }
 
 select {
@@ -109,8 +111,6 @@ input {
 	color: inherit;
 	background-color: #A7ABB2;
 	padding: 10px;
-	margin: 5px 5%;
-	float: left;
 }
 
 .footer {
