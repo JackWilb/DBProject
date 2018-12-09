@@ -28,20 +28,21 @@
 				<input type="text" name="topText"><br>
 
 				Bottom Text:<br>
-				<input type="text" name="bottomText"> <br>
+				<input type="text" name="bottomText">
 
 				Tags:<br>
 				<select id="tags" name="tags" multiple="multiple" class="lstSelected">
 					{% for tag in tags %}
 						<option value="{{ tag.id }}">{{ tag.name }}</option>
 					{% endfor %}
-				</select> <br>
+				</select> 
+				<br>
 
 				<input type="submit" value="Submit">
 		</form>
 
 		<a href="/makeatag">Make A New Tag</a>
-		
+
 	</div>
 
 	<div class="img-container"> 
