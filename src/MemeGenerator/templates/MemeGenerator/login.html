@@ -10,11 +10,13 @@
 
 </div>
 
+{% load static %}
+
 <h2>Login</h2>
 
 <div class="content">
 	<div class="form-container">
-		
+
 		<a href="/makeanaccount">Make An Account</a><br>
 
 		<form action="" method="POST">{% csrf_token %}
@@ -24,6 +26,10 @@
 
 			<input type="submit" value="Submit">
 		</form>
+	</div>
+
+	<div class="img-container"> 
+		<img src="{% static 'MemeGenerator/sociallyAwkwardPenguin.jpg' %}">
 	</div>
 </div>
 
