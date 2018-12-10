@@ -110,9 +110,11 @@ INSERT INTO MemeTag (memeid, tagid) VALUES
 (1, 4),
 (2, 3);
 
-INSERT INTO TagUser (userid, memetagid) VALUES
+INSERT INTO TagUser (userid, tagid) VALUES
 (1, 1),
 (1, 2),
-(1, 3);
+(1, 3),
+(1, 4),
+(1, 5);
 
 
