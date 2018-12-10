@@ -51,6 +51,7 @@ def makeatag(request):
 			new_row_Tag.save()
 			new_row_Taguser = Taguser(userid = User.objects.get(login = user), 
 				tagid = new_row_Tag)
+			new_row_Taguser.save()
 
 		return redirect('/makeameme/')
 
