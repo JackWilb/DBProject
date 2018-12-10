@@ -35,7 +35,7 @@ def login(request):
 			return redirect('/makeanaccount/')
 		else:
 			# Make page and attach cookie
-			response = render(request, 'MemeGenerator/index.html')
+			response = redirect('/')
 			response.set_cookie('username', value = accountName, max_age = max_age)
 			return response
 	else:
