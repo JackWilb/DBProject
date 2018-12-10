@@ -31,7 +31,7 @@ def login(request):
 		max_age = 7*24*60*60
 
 		# Check if user exists, if not render makeanaccount
-		if User.objects.filter(login = accountName). count() == 0:
+		if User.objects.filter(login = accountName).count() == 0:
 			redirect('/makeanaccount/')
 
 		# Make page and attach cookie
