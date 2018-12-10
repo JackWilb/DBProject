@@ -44,10 +44,13 @@ def login(request):
 def makeatag(request):
 	if request.method == 'POST':
 		tag = request.POST.get('tag')
+		user = request.COOKIES.get('username')
 
 		if tag.strip():
 			new_row_Tag = Tag(name = tag)
 			new_row_Tag.save()
+			new_row_Taguser = Taguser(userid = User.objects.get(login = user), 
+				tagid = new_row_Tag)
 
 		return redirect('/makeameme/')
 
