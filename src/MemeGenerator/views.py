@@ -32,7 +32,7 @@ def login(request):
 
 		# Check if user exists, if not render makeanaccount
 		if User.objects.filter(login = accountName).count() == 0:
-			redirect('/makeanaccount/')
+			return redirect('/makeanaccount/')
 		else:
 			# Make page and attach cookie
 			response = render(request, 'MemeGenerator/login.html')
