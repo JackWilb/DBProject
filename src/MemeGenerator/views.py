@@ -119,7 +119,7 @@ def makeanaccount(request):
 		user = request.POST.get('user')
 
 		if user.strip():
-			if User.objects.filter(login = accountName). count() == 0:
+			if User.objects.filter(login = user). count() == 0 and user != None:
 				new_row_User = User(login = user)
 				new_row_User.save()
 
