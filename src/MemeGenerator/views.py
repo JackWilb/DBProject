@@ -46,7 +46,7 @@ def makeatag(request):
 		tag = request.POST.get('tag')
 		user = request.COOKIES.get('username')
 
-		if !Tag.objects.filter(name = tag).exists() and tag.strip():
+		if not Tag.objects.filter(name = tag).exists() and tag.strip():
 			new_row_Tag = Tag(name = tag)
 			new_row_Tag.save()
 			new_row_Taguser = Taguser(userid = User.objects.get(login = user), 
