@@ -30,6 +30,10 @@ def login(request):
 		accountName = request.GET.get('accountName')
 		max_age = 7*24*60*60
 
+		# Check if user exists, if not render makeanaccount
+		if User.objects.filter(login = accountName). count() == 0:
+			redirect('/makeanaccount/')
+
 		# Make page and attach cookie
 		response = render(request, 'MemeGenerator/login.html')
 		response.set_cookie('username', value = accountName, max_age = max_age)
@@ -115,10 +119,11 @@ def makeanaccount(request):
 		user = request.POST.get('user')
 
 		if user.strip():
-			new_row_User = User(login = user)
-			new_row_User.save()
+			if User.objects.filter(login = accountName). count() == 0:
+				new_row_User = User(login = user)
+				new_row_User.save()
 
-		return redirect('/login')
+		return redirect('/login/')
 
 	else:
 		return render(request, 'MemeGenerator/makeanaccount.html')
