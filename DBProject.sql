@@ -75,7 +75,7 @@ userid INT UNSIGNED NOT NULL,
 tagid INT UNSIGNED NOT NULL,
 
 FOREIGN KEY (userid) REFERENCES User (id),
-FOREIGN KEY (memetagid) REFERENCES MemeTag (id)
+FOREIGN KEY (tagid) REFERENCES Tag (id)
 );
 
 
