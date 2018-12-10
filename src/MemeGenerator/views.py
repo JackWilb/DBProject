@@ -25,7 +25,7 @@ def index(request):
 	return render(request, 'MemeGenerator/index.html', context)
 
 def login(request):
-	if request.method == 'GET':
+	if request.method == 'GET' and request.GET.get('accountName') != None:
 		# Set cookie attributes
 		accountName = request.GET.get('accountName')
 		max_age = 7*24*60*60
