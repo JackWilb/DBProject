@@ -37,6 +37,11 @@
 	<div class="img-container">
 		<img src="{{ rightMeme.image }}"></img>
 		<h3>Here is a title for the right image!</h3>
+		{% for i in rightRange %}
+			{% with rightAuthors|index:i as item %}
+				<p> {{item.0.login}} : {{item.1.comment}} </p>
+			{% endwith %}
+		{% endfor %}
 	</div>
 </div>
  
