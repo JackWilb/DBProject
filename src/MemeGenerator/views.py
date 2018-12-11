@@ -41,8 +41,8 @@ def index(request):
 			leftAuthors.append(tuple)
 
 		for i in range(len(rightComments.values())):
-			tuple = (User.objects.get(id=leftComments.values()[i].get('userid_id')), leftComments[i])
-			leftAuthors.append(tuple)
+			tuple = (User.objects.get(id=rightComments.values()[i].get('userid_id')), rightComments[i])
+			rightAuthors.append(tuple)
 
 		# Get likes for those memes
 		leftLikes = None
@@ -88,8 +88,8 @@ def index(request):
 			leftAuthors.append(tuple)
 
 		for i in range(len(rightComments.values())):
-			tuple = (User.objects.get(id=leftComments.values()[i].get('userid_id')), leftComments[i])
-			leftAuthors.append(tuple)
+			tuple = (User.objects.get(id=rightComments.values()[i].get('userid_id')), rightComments[i])
+			rightAuthors.append(tuple)
 
 		# Get likes for those memes
 		leftLikes = None
