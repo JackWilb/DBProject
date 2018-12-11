@@ -12,7 +12,7 @@ def index(request):
 		user = request.COOKIES.get('username')
 		meme = request.POST.get('meme')
 
-		if user != '':
+		if user != None:
 			user = 'Annonymous'
 
 		new_row_Comment = Comment(
