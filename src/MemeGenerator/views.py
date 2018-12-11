@@ -22,7 +22,7 @@ def index(request):
 		randomindex2 = random.randint(0, Meme.objects.filter(memetag__tagid__in=tags).count() - 1)
 
 		if (randomindex1 == randomindex2):
-			randomindex2 = random.randint(0, Meme.objects.values('memetag', 'image').filter(memetag__tagid__in=tags).count() - 1)
+			randomindex2 = random.randint(0, Meme.objects.filter(memetag__tagid__in=tags).count() - 1)
 
 		# Get Memes based on random indicies
 		meme1 = Meme.objects.filter(memetag__tagid__in=tags)[randomindex1]
