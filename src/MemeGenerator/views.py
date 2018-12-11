@@ -13,6 +13,10 @@ def index(request):
 		# Get Query tags
 		tags = request.GET.getlist('tags')
 
+		# Check if we have a meme with those tags
+		if Meme.objects.values('memetag', 'image').filter(memetag__tagid__in=tags).count() == 0:
+			return redirect('/')
+
 		# Get 2 random indicies
 		randomindex1 = random.randint(0, Meme.objects.values('memetag', 'image').filter(memetag__tagid__in=tags).count() - 1)
 		randomindex2 = random.randint(0, Meme.objects.values('memetag', 'image').filter(memetag__tagid__in=tags).count() - 1)
