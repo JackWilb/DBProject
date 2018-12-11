@@ -68,6 +68,11 @@ h2 {
 	padding: 0px 5%;
 }
 
+.img-container form {
+	width: 90%;
+	padding: 0px 5%;
+}
+
 .form-container {
 	width: 50%;
 	float: left;
