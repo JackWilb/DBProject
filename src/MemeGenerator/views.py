@@ -21,8 +21,8 @@ def index(request):
 			randomindex2 = random.randint(0, Meme.objects.count() - 1)
 
 		# Get Memes based on random indicies
-		meme1 = Meme.objects.values('memetag', 'image', 'id').filter(memetag__in=tags)[randomindex1]
-		meme2 = Meme.objects.values('memetag', 'image', 'id').filter(memetag__in=tags)[randomindex2]
+		meme1 = Meme.objects.values('memetag', 'image', 'id').filter(memetag__tagid__in=tags)[randomindex1]
+		meme2 = Meme.objects.values('memetag', 'image', 'id').filter(memetag__tagid__in=tags)[randomindex2]
 
 		# Get Comments for those memes
 		leftComments = Comment.objects.filter(memeid = meme1.get(id))
