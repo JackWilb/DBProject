@@ -29,18 +29,18 @@ def index(request):
 		meme2 = Meme.objects.filter(memetag__tagid__in=tags)[randomindex2]
 
 		# Get Comments for those memes
-		leftComments = Comment.objects.filter(memeid = meme1.get('id'))
-		rightComments = Comment.objects.filter(memeid = meme2.get('id'))
+		leftComments = Comment.objects.filter(memeid = meme1.id)
+		rightComments = Comment.objects.filter(memeid = meme2.id)
 
 		# Get authors for the comments
 		leftAuthors = []
 		rightAuthors = []
 
-		for a in leftComments.values('id'):
-			leftAuthors.append(User.objects.filter(id=a.get('id')))
+		#for a in leftComments.values('id'):
+		#	leftAuthors.append(User.objects.filter(id=a.get('id')))
 
-		for a in rightComments.values('id'):
-			rightAuthors.append(a.get('id'))
+		#for a in rightComments.values('id'):
+		#	rightAuthors.append(a.get('id'))
 
 		# Get likes for those memes
 		leftLikes = None
