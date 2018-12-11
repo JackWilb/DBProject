@@ -33,8 +33,14 @@ def index(request):
 		rightComments = Comment.objects.filter(memeid = meme2.get(id))
 
 		# Get authors for the comments
-		leftAuthors = User.objects.filter(id=leftComments.values('id').get('id'))
-		rightAuthors = User.objects.filter(id=rightComments.values('id').get('id'))
+		leftAuthors = []
+		rightAuthors = []
+
+		for a in leftComments.values('id'):
+			leftAuthors.append(a.get('id'))
+
+		for a in rightComments.values('id'):
+			rightAuthors.append(a.get('id'))
 
 		# Get likes for those memes
 		leftLikes = None
@@ -70,8 +76,14 @@ def index(request):
 		rightComments = Comment.objects.filter(memeid = meme2.id)
 
 		# Get authors for the comments
-		leftAuthors = User.objects.filter(id=leftComments.values('id').get('id'))
-		rightAuthors = User.objects.filter(id=rightComments.values('id').get('id'))
+		leftAuthors = []
+		rightAuthors = []
+
+		for a in leftComments.values('id'):
+			leftAuthors.append(a.get('id'))
+
+		for a in rightComments.values('id'):
+			rightAuthors.append(a.get('id'))
 
 		# Get likes for those memes
 		leftLikes = None
