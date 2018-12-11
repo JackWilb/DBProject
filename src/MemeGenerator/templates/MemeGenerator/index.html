@@ -22,12 +22,16 @@
 	<input type="submit" value="Submit">
 </form>
 
+{% load index %}
+
 <div class="content">
 	<div class="img-container">
 		<img src="{{ leftMeme.image }}"></img>
 		<h3>Here is a title for the left image!</h3>
-		{% for a in leftAuthors %}
-			<p> {{leftAuthors.0.0.login}} : {{leftAuthors.0.1.comment}} </p>
+		{% for i in leftRange %}
+			{% with leftAuthors|index:i as item %}
+				<p> {{item.0.login}} : {{item.1.comment}} </p>
+			{% endwith %}
 		{% endfor %}
 	</div>
 	<div class="img-container">

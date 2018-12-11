@@ -57,6 +57,8 @@ def index(request):
 			'leftComments': leftComments,
 			'rightComments': rightComments,
 			'leftAuthors': leftAuthors,
+			'leftRange': range(len(leftAuthors)),
+			'rightRange': range(len(rightAuthors)),
 			'rightAuthors': rightAuthors,
 			'leftLikes': leftLikes,
 			'rightLikes': rightLikes,
@@ -105,6 +107,8 @@ def index(request):
 			'rightComments': rightComments,
 			'leftAuthors': leftAuthors,
 			'rightAuthors': rightAuthors,
+			'leftRange': range(len(leftAuthors)),
+			'rightRange': range(len(rightAuthors)),
 			'leftLikes': leftLikes,
 			'rightLikes': rightLikes,
 			'allTags': allTags
