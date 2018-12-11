@@ -21,8 +21,8 @@ def index(request):
 		meme1 = Meme.objects.all()[randomindex1]
 		meme2 = Meme.objects.all()[randomindex2]
 
-		leftComments = Comment.objects.get(memeid = meme1.id)
-		rightComments = Comment.objects.get(memeid = meme2.id)
+		leftComments = Comment.objects.filter(memeid = meme1.id)
+		rightComments = Comment.objects.filter(memeid = meme2.id)
 
 		leftLikes = null
 		rightLikes = null
