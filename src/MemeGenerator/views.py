@@ -17,7 +17,7 @@ def index(request):
 
 		new_row_Comment = Comment(
 			userid = User.objects.get(login = user),
-			memeid = Meme.objects.get(id = meme),
+			memeid = Meme.objects.get(id = int(float(meme))),
 			comment = comment
 			)
 		new_row_Comment.save()
