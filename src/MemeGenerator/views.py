@@ -25,19 +25,19 @@ def index(request):
 			randomindex2 = random.randint(0, Meme.objects.values('memetag', 'image').filter(memetag__tagid__in=tags).count() - 1)
 
 		# Get Memes based on random indicies
-		meme1 = Meme.objects.values('memetag', 'image', 'id').filter(memetag__tagid__in=tags)[randomindex1]
-		meme2 = Meme.objects.values('memetag', 'image', 'id').filter(memetag__tagid__in=tags)[randomindex2]
+		meme1 = Meme.objects.filter(memetag__tagid__in=tags)[randomindex1]
+		meme2 = Meme.objects.filter(memetag__tagid__in=tags)[randomindex2]
 
 		# Get Comments for those memes
-		leftComments = Comment.objects.filter(memeid = meme1.get(id))
-		rightComments = Comment.objects.filter(memeid = meme2.get(id))
+		leftComments = Comment.objects.filter(memeid = meme1.get('id'))
+		rightComments = Comment.objects.filter(memeid = meme2.get('id'))
 
 		# Get authors for the comments
 		leftAuthors = []
 		rightAuthors = []
 
 		for a in leftComments.values('id'):
-			leftAuthors.append(a.get('id'))
+			leftAuthors.append(User.objects.filter(id=a.get('id')))
 
 		for a in rightComments.values('id'):
 			rightAuthors.append(a.get('id'))
