@@ -37,10 +37,10 @@ def index(request):
 		rightAuthors = []
 
 		for a in leftComments.values():
-			leftAuthors.append(User.objects.filter(id=a.get('userid_id')))
+			leftAuthors.append(User.objects.get(id=a.get('userid_id')))
 
-		#for a in rightComments.values('id'):
-		#	rightAuthors.append(a.get('id'))
+		for a in rightComments.values():
+			rightAuthors.append(User.objects.get(id=a.get('userid_id')))
 
 		# Get likes for those memes
 		leftLikes = None
@@ -56,6 +56,8 @@ def index(request):
 			'rightComments': rightComments,
 			'leftAuthors': leftAuthors,
 			'rightAuthors': rightAuthors,
+			'leftRange': range(len(leftAuthors)),
+			'rightRange': range(len(rightAuthors)),
 			'leftLikes': leftLikes,
 			'rightLikes': rightLikes,
 			'allTags': allTags
@@ -81,11 +83,11 @@ def index(request):
 		leftAuthors = []
 		rightAuthors = []
 
-		for a in leftComments.values('id'):
-			leftAuthors.append(a.get('id'))
+		for a in leftComments.values():
+			leftAuthors.append(User.objects.get(id=a.get('userid_id')))
 
-		for a in rightComments.values('id'):
-			rightAuthors.append(a.get('id'))
+		for a in rightComments.values():
+			rightAuthors.append(User.objects.get(id=a.get('userid_id')))
 
 		# Get likes for those memes
 		leftLikes = None
@@ -101,6 +103,8 @@ def index(request):
 			'rightComments': rightComments,
 			'leftAuthors': leftAuthors,
 			'rightAuthors': rightAuthors,
+			'leftRange': range(len(leftAuthors)),
+			'rightRange': range(len(rightAuthors)),
 			'leftLikes': leftLikes,
 			'rightLikes': rightLikes,
 			'allTags': allTags
