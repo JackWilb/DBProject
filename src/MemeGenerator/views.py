@@ -13,7 +13,7 @@ def index(request):
 		# Get Query tags
 		tags = request.GET.getlist('tags')
 
-		# Check if we have a meme with those tags
+		# Check if we have a meme with those tags if not redirect to index
 		if Meme.objects.values('memetag', 'image').filter(memetag__tagid__in=tags).count() == 0:
 			return redirect('/')
 
@@ -31,6 +31,10 @@ def index(request):
 		# Get Comments for those memes
 		leftComments = Comment.objects.filter(memeid = meme1.get(id))
 		rightComments = Comment.objects.filter(memeid = meme2.get(id))
+
+		# Get authors for the comments
+		leftAuthors = User.objects.filter(id__in=leftComments.values('id').get(id))
+		rightAuthors = User.objects.filter(id__in=rightComments.values('id').get(id))
 
 		# Get likes for those memes
 		leftLikes = None
@@ -65,6 +69,10 @@ def index(request):
 		leftComments = Comment.objects.filter(memeid = meme1.id)
 		rightComments = Comment.objects.filter(memeid = meme2.id)
 
+		# Get authors for the comments
+		leftAuthors = User.objects.filter(id__in=leftComments.values('id').get(id))
+		rightAuthors = User.objects.filter(id__in=rightComments.values('id').get(id))
+
 		# Get likes for those memes
 		leftLikes = None
 		rightLikes = None
@@ -77,6 +85,8 @@ def index(request):
 			'rightMeme': meme2,
 			'leftComments': leftComments,
 			'rightComments': rightComments,
+			'leftAuthors': leftAuthors,
+			'rightAuthors': rightAuthors,
 			'leftLikes': leftLikes,
 			'rightLikes': rightLikes,
 			'allTags': allTags
