@@ -13,7 +13,7 @@ def index(request):
 		meme = request.POST.get('meme')
 
 		if user == None:
-			user = 'Annonymous'
+			user = 'Anonymous'
 
 		new_row_Comment = Comment(
 			userid = User.objects.get(login = user),

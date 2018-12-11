@@ -89,7 +89,7 @@ INSERT INTO Template (image) VALUES
 
 INSERT INTO User (login) VALUES
 ('Admin'),
-('Annoymous');
+('Anonymous');
 
 INSERT INTO Text (top, bottom) VALUES
 ("Hey, what's up?", "Good, you?"),
