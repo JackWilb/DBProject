@@ -36,11 +36,11 @@ def index(request):
 		leftAuthors = []
 		rightAuthors = []
 
-		for i in len(leftComments.values()):
+		for i in range(len(leftComments.values())):
 			tuple = (User.objects.get(id=leftComments.values()[i].get('userid_id')), leftComments[i])
 			leftAuthors.append(tuple)
 
-		for i in len(rightComments.values()):
+		for i in range(len(rightComments.values())):
 			tuple = (User.objects.get(id=leftComments.values()[i].get('userid_id')), leftComments[i])
 			leftAuthors.append(tuple)
 
@@ -83,11 +83,11 @@ def index(request):
 		leftAuthors = []
 		rightAuthors = []
 
-		for i in len(leftComments.values()):
+		for i in range(len(leftComments.values())):
 			tuple = (User.objects.get(id=leftComments.values()[i].get('userid_id')), leftComments[i])
 			leftAuthors.append(tuple)
 
-		for i in len(rightComments.values()):
+		for i in range(len(rightComments.values())):
 			tuple = (User.objects.get(id=leftComments.values()[i].get('userid_id')), leftComments[i])
 			leftAuthors.append(tuple)
 
