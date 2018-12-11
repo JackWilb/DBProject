@@ -26,14 +26,14 @@
 	<div class="img-container">
 		<img src="{{ leftMeme.image }}"></img>
 		<h3>Here is a title for the left image!</h3>
-		{% for comment in leftComment %}
+		{% for comment in leftComments %}
 			<p><span></span> : {{ comment.comment }}</p>
 		{% endfor %}
 	</div>
 	<div class="img-container">
 		<img src="{{ rightMeme.image }}"></img>
 		<h3>Here is a title for the right image!</h3>
-		{% for comment in rightComment %}
+		{% for comment in rightComments %}
 			<p><span></span> : {{ comment.comment }}</p>
 		{% endfor %}
 	</div>

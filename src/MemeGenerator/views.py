@@ -54,6 +54,8 @@ def index(request):
 			'rightMeme': meme2,
 			'leftComments': leftComments,
 			'rightComments': rightComments,
+			'leftAuthors': leftAuthors,
+			'rightAuthors': rightAuthors,
 			'leftLikes': leftLikes,
 			'rightLikes': rightLikes,
 			'allTags': allTags
