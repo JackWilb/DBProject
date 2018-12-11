@@ -32,7 +32,7 @@ def index(request):
 		rightLikes = None
 
 		# Get tags for filtering
-		tags = Tag.objects.all()
+		allTags = Tag.objects.all()
 
 		context = {
 			'leftMeme': meme1,
@@ -41,7 +41,7 @@ def index(request):
 			'rightComments': rightComments,
 			'leftLikes': leftLikes,
 			'rightLikes': rightLikes,
-			'tags': tags
+			'allTags': allTags
 		}
 		return render(request, 'MemeGenerator/index.html', context)
 
