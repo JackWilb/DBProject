@@ -10,7 +10,7 @@ from django.db import models
 
 
 class Comment(models.Model):
-    userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userid')
+    userid = models.ForeignKey('User')
     memeid = models.ForeignKey('Meme', models.DO_NOTHING, db_column='memeid')
     comment = models.CharField(max_length=512)
 

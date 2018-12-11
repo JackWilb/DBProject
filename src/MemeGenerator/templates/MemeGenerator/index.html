@@ -16,15 +16,15 @@
 	<div class="img-container">
 		<img src="{{ leftMeme.image }}"></img>
 		<h3>Here is a title for the left image!</h3>
-		{% for comment in leftComments %}
-			<p>{{ comment.comment }}</p>
+		{% for i in range(leftComments.count()) %}
+			<p>{{ leftComments[i].comment }}</p>
 		{% endfor %}
 	</div>
 	<div class="img-container">
 		<img src="{{ rightMeme.image }}"></img>
 		<h3>Here is a title for the right image!</h3>
-		{% for comment in rightComments %}
-			<p>{{ comment.comment }}</p>
+		{% for i in range(rightComments.count()) %}
+			<p>{{ rightComments[i].comment }}</p>
 		{% endfor %}
 	</div>
 </div>
