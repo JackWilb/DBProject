@@ -117,4 +117,9 @@ INSERT INTO TagUser (userid, tagid) VALUES
 (1, 4),
 (1, 5);
 
+INSERT INTO Comment (userid, memeid, comment) VALUES
+(1, 1, 'Only good meme on this site'),
+(1, 1, 'Old but gold'),
+(1, 2, 'Weak effort');
+
 

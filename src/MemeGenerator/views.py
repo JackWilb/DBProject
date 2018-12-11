@@ -7,22 +7,35 @@ import math
 import random
 
 def index(request):
-	# Get 2 random indicies
-	randomindex1 = random.randint(0, Meme.objects.count() - 1)
-	randomindex2 = random.randint(0, Meme.objects.count() - 1)
-
-	if (randomindex1 == randomindex2):
+	if request.method == 'POST':
+		
+	else:
+		# Get 2 random indicies
+		randomindex1 = random.randint(0, Meme.objects.count() - 1)
 		randomindex2 = random.randint(0, Meme.objects.count() - 1)
 
-	# Get Memes based on random indicies
-	meme1 = Meme.objects.all()[randomindex1]
-	meme2 = Meme.objects.all()[randomindex2]
+		if (randomindex1 == randomindex2):
+			randomindex2 = random.randint(0, Meme.objects.count() - 1)
 
-	context = {
-		'leftMeme': meme1,
-		'rightMeme': meme2
-	}
-	return render(request, 'MemeGenerator/index.html', context)
+		# Get Memes based on random indicies
+		meme1 = Meme.objects.all()[randomindex1]
+		meme2 = Meme.objects.all()[randomindex2]
+
+		leftComments = Comment.objects.get(memeid = meme1.id)
+		rightComments = Comment.objects.get(memeid = meme2.id)
+
+		leftLikes = null
+		rightLikes = null
+
+		context = {
+			'leftMeme': meme1,
+			'rightMeme': meme2,
+			'leftComments': leftComments,
+			'rightComments': rightComments,
+			'leftLikes': leftLikes,
+			'rightLikes': rightLikes
+		}
+		return render(request, 'MemeGenerator/index.html', context)
 
 def login(request):
 	if request.method == 'GET' and request.GET.get('accountName') != None:
