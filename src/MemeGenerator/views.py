@@ -8,6 +8,18 @@ import random
 
 def index(request):
 	if request.method == 'POST':
+		comment = request.POST.get('comment')
+		user = request.COOKIES.get('username')
+		meme = 
+		new_row_Comment = Comment(
+			userid = User.objects.get(login = user),
+			memeid = None,
+			comment = comment
+			)
+		new_row_Comment.save()
+
+		Comment
+
 		pass
 	elif request.GET.getlist('tags'):
 		# Get Query tags
@@ -156,6 +168,7 @@ def makeameme(request):
 		topText = request.POST.get('topText')
 		bottomText = request.POST.get('bottomText')
 		tags = request.POST.getlist('tags')
+		user = request.COOKIES.get('username')
 
 		# Build the meme and save
 		# See which memeTemplate
@@ -184,7 +197,7 @@ def makeameme(request):
 			templateid = Template.objects.get(id=meme_id), 
 			textid = Text.objects.get(top = topText), 
 			image = "/media/MemeGenerator/" + str(random_file_number) + ".jpg", 
-			userid = None
+			userid = User.objects.get(login = user)
 		)
 		new_row_meme.save()
 

@@ -88,7 +88,7 @@ INSERT INTO Template (image) VALUES
 ('static/MemeGenerator/sociallyAwkwardPenguin.jpg');
 
 INSERT INTO User (login) VALUES
-('admin');
+('Admin');
 
 INSERT INTO Text (top, bottom) VALUES
 ("Hey, what's up?", "Good, you?"),

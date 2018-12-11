@@ -35,7 +35,10 @@
 		{% endfor %}
 		<form action="" method="POST">{% csrf_token %}
 			Make A Comment:<br>
-			<input type="text" name="comment" value="New Comments Go Here!"><br>
+			<input type="text" name="comment" placeholder="New Comments Go Here!"><br>
+			{% with leftAuthors|index:1 as item %}
+				<input type="hidden" name="meme" value="{{ item.1.meme_id }}"><br>
+			{% endwith %}
 			<input type="submit" value="Submit">
 		</form>
 	</div>
@@ -49,7 +52,7 @@
 		{% endfor %}
 		<form action="" method="POST">{% csrf_token %}
 			Make A Comment:<br>
-			<input type="text" name="comment" value="New Comments Go Here!"><br>
+			<input type="text" name="comment" placeholder="New Comments Go Here!"><br>
 			<input type="submit" value="Submit">
 		</form>
 	</div>
