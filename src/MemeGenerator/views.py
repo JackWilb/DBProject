@@ -23,11 +23,16 @@ def index(request):
 		meme1 = Meme.objects.all()[randomindex1]
 		meme2 = Meme.objects.all()[randomindex2]
 
+		# Get Comments for those memes
 		leftComments = Comment.objects.filter(memeid = meme1.id)
 		rightComments = Comment.objects.filter(memeid = meme2.id)
 
+		# Get likes for those memes
 		leftLikes = None
 		rightLikes = None
+
+		# Get tags for filtering
+		tags = Tag.objects.all()
 
 		context = {
 			'leftMeme': meme1,
@@ -35,7 +40,8 @@ def index(request):
 			'leftComments': leftComments,
 			'rightComments': rightComments,
 			'leftLikes': leftLikes,
-			'rightLikes': rightLikes
+			'rightLikes': rightLikes,
+			'tags': tags
 		}
 		return render(request, 'MemeGenerator/index.html', context)
 
