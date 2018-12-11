@@ -12,12 +12,22 @@
 
 <h2>Your Feed</h2>
 
+<p>Filter the page:</p>
+<form action="" method="GET">{% csrf_token %}
+	<select id="tags" name="tags" multiple="multiple" class="lstSelected">
+		{% for tag in tags %}
+			<option value="{{ tag.id }}">{{ tag.name }}</option>
+		{% endfor %}
+	</select> <br>
+	<input type="submit" value="Submit">
+</form>
+
 <div class="content">
 	<div class="img-container">
 		<img src="{{ leftMeme.image }}"></img>
 		<h3>Here is a title for the left image!</h3>
 		{% for i in range(leftComments.count()) %}
-			<p>{{ leftComments[i].comment }}</p>
+			<p><span></span> : {{ leftComments[i].comment }}</p>
 		{% endfor %}
 	</div>
 	<div class="img-container">
