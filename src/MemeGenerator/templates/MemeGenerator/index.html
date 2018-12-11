@@ -26,8 +26,8 @@
 	<div class="img-container">
 		<img src="{{ leftMeme.image }}"></img>
 		<h3>Here is a title for the left image!</h3>
-		{% for a in leftComments %}
-			<p> {{leftComments.0.0.login}} : {{leftComments.0.1.comment}} </p>
+		{% for a in leftAuthors %}
+			<p> {{leftAuthors.0.0.login}} : {{leftAuthors.0.1.comment}} </p>
 		{% endfor %}
 	</div>
 	<div class="img-container">
