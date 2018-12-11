@@ -9,7 +9,7 @@ import random
 def index(request):
 	if request.method == 'POST':
 		pass
-	elif request.GET.getlist('tags') != None:
+	elif request.GET.getlist('tags'):
 		# Get Query tags
 		tags = request.GET.getlist('tags')
 
