@@ -9,9 +9,9 @@ import random
 def index(request):
 	if request.method == 'POST':
 		pass
-	elif request.GET.getlist('tag') != None:
+	elif request.GET.getlist('tags') != None:
 		# Get Query tags
-		tags = request.GET.getlist('tag')
+		tags = request.GET.getlist('tags')
 
 		# Get 2 random indicies
 		randomindex1 = random.randint(0, Meme.objects.values('memetag', 'image').filter(memetag__in=tags).count() - 1)
