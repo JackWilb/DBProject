@@ -9,8 +9,42 @@ import random
 def index(request):
 	if request.method == 'POST':
 		pass
-	elif request.GET.get('tag') != None:
-		pass
+	elif request.GET.getlist('tag') != None:
+		# Get Query tags
+		tags = request.GET.getlist('tag')
+
+		# Get 2 random indicies
+		randomindex1 = random.randint(0, Meme.objects.values('memetag', 'image').filter(memetag__in=tags)count() - 1)
+		randomindex2 = random.randint(0, Meme.objects.values('memetag', 'image').filter(memetag__in=tags).count() - 1)
+
+		if (randomindex1 == randomindex2):
+			randomindex2 = random.randint(0, Meme.objects.count() - 1)
+
+		# Get Memes based on random indicies
+		meme1 = Meme.objects.values('memetag', 'image').filter(memetag__in=tags)[randomindex1]
+		meme2 = Meme.objects.values('memetag', 'image').filter(memetag__in=tags)[randomindex2]
+
+		# Get Comments for those memes
+		leftComments = Comment.objects.filter(memeid = meme1.id)
+		rightComments = Comment.objects.filter(memeid = meme2.id)
+
+		# Get likes for those memes
+		leftLikes = None
+		rightLikes = None
+
+		# Get tags for filtering
+		allTags = Tag.objects.all()
+
+		context = {
+			'leftMeme': meme1,
+			'rightMeme': meme2,
+			'leftComments': leftComments,
+			'rightComments': rightComments,
+			'leftLikes': leftLikes,
+			'rightLikes': rightLikes,
+			'allTags': allTags
+		}
+		return render(request, 'MemeGenerator/index.html', context)
 	else:
 		# Get 2 random indicies
 		randomindex1 = random.randint(0, Meme.objects.count() - 1)
