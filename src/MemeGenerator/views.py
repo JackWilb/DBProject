@@ -10,17 +10,17 @@ def index(request):
 	if request.method == 'POST':
 		comment = request.POST.get('comment')
 		user = request.COOKIES.get('username')
-		meme = 
+		meme = request.POST.get('meme')
+
 		new_row_Comment = Comment(
 			userid = User.objects.get(login = user),
-			memeid = None,
+			memeid = Meme.objects.get(id = meme),
 			comment = comment
 			)
 		new_row_Comment.save()
 
-		Comment
-
-		pass
+		return redirect('/')
+		
 	elif request.GET.getlist('tags'):
 		# Get Query tags
 		tags = request.GET.getlist('tags')
