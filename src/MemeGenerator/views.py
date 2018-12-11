@@ -36,8 +36,8 @@ def index(request):
 		leftAuthors = []
 		rightAuthors = []
 
-		#for a in leftComments.values('id'):
-		#	leftAuthors.append(User.objects.filter(id=a.get('id')))
+		for a in leftComments.values():
+			leftAuthors.append(User.objects.filter(id=a.get('userid_id')))
 
 		#for a in rightComments.values('id'):
 		#	rightAuthors.append(a.get('id'))
