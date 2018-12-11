@@ -8,7 +8,7 @@ import random
 
 def index(request):
 	if request.method == 'POST':
-		
+		pass
 	else:
 		# Get 2 random indicies
 		randomindex1 = random.randint(0, Meme.objects.count() - 1)
