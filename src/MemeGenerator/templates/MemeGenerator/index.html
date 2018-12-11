@@ -26,7 +26,7 @@
 	<div class="img-container">
 		<img src="{{ leftMeme.image }}"></img>
 		<h3>Here is a title for the left image!</h3>
-		{% for comment in leftComments %}
+		{% for n in range(leftComments|length) %}
 			<p> {% User.objects.get(id = comment.userid_id).login %} : {{ comment.comment }}</p>
 		{% endfor %}
 	</div>
