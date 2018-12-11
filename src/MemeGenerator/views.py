@@ -24,8 +24,8 @@ def index(request):
 		leftComments = Comment.objects.filter(memeid = meme1.id)
 		rightComments = Comment.objects.filter(memeid = meme2.id)
 
-		leftLikes = null
-		rightLikes = null
+		leftLikes = None
+		rightLikes = None
 
 		context = {
 			'leftMeme': meme1,
