@@ -51,6 +51,7 @@
 		<form action="" method="POST">{% csrf_token %}
 			Make A Comment:<br>
 			<input type="text" name="comment" placeholder="New Comments Go Here!"><br>
+			<input type="hidden" name="meme" value="{{ rightMeme.id }}"><br>
 			<input type="submit" value="Submit">
 		</form>
 	</div>
