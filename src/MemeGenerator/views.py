@@ -212,8 +212,11 @@ def makeameme(request):
 		# Get Tags to pass into context
 		tags = Tag.objects.all()
 
+		# Get all Templates to pass to context
+		templates = Template.objects.all()
+
 		# Set context
-		context = {'tags': tags}
+		context = {'tags': tags, 'templates': templates}
 
 		return render(request, 'MemeGenerator/makeameme.html', context)
 
