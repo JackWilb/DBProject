@@ -187,12 +187,19 @@ def makeameme(request):
 		new_row_text = Text(top = topText, bottom = bottomText)
 		new_row_text.save();
 
+		user = request.COOKIES.get('username')
+
+		if user != None:
+			user = User.objects.get(login = user)
+		else:
+			user = User.objects.get(login = 'Anonymous')
+
 		# Construct a new meme and save it to the database
 		new_row_meme = Meme(
 			templateid = template, 
 			textid = Text.objects.get(top = topText), 
 			image = "/media/MemeGenerator/" + str(random_file_number) + ".jpg", 
-			userid = User.objects.get(login = user)
+			userid = user
 		)
 		new_row_meme.save()
 
