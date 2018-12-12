@@ -173,15 +173,7 @@ def makeameme(request):
 		tags = request.POST.getlist('tags')
 		user = request.COOKIES.get('username')
 
-		# Build the meme and save
-		# See which memeTemplate
-		if (memeTemplate == '1'):
-			meme_id = 1
-		elif (memeTemplate == '2'):
-			meme_id = 3
-		else:
-			meme_id = 2
-		template = Template.objects.get(id=meme_id)
+		template = Template.objects.get(id=memeTemplate)
 		random_file_number = math.floor(random.random() * 4294967295)
 
 		file_path_root = "~/websites/DBProject/src/"

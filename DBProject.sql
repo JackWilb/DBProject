@@ -13,7 +13,8 @@ name VARCHAR(32) NOT NULL
 
 CREATE TABLE Template (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-image VARCHAR(256) NOT NULL
+image VARCHAR(256) NOT NULL,
+name VARCHAR(64) NOT NULL
 );
 
 CREATE TABLE Text (
@@ -82,14 +83,21 @@ FOREIGN KEY (tagid) REFERENCES Tag (id)
 
 -- BASE INSERTS TO MAKE SITE WORK
 
-INSERT INTO Template (image) VALUES
-('static/MemeGenerator/grumpyCat.jpg'),
-('static/MemeGenerator/rickAstley.jpg'),
-('static/MemeGenerator/sociallyAwkwardPenguin.jpg');
+INSERT INTO Template (image, name) VALUES
+('static/MemeGenerator/grumpyCat.jpg', 'Grumpy Cat'),
+('static/MemeGenerator/rickAstley.jpg', 'Rick Astley'),
+('static/MemeGenerator/sociallyAwkwardPenguin.jpg', 'Socially Awkward Penguin'),
+('static/MemeGenerator/oneDoesNotSimply.jpg', 'One Does Not Simply'),
+('static/MemeGenerator/obama.jpg', 'Obama'),
+('static/MemeGenerator/willyWonka.jpg', 'Willy Wonka')
+;
 
 INSERT INTO User (login) VALUES
 ('Admin'),
-('Anonymous');
+('Anonymous'),
+('Jack'),
+('Tiffany'),
+('Michelle');
 
 INSERT INTO Text (top, bottom) VALUES
 ("Hey, what's up?", "Good, you?"),
