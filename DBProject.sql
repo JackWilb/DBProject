@@ -100,12 +100,12 @@ INSERT INTO User (login) VALUES
 
 INSERT INTO Text (top, bottom) VALUES
 ("Hey, what's up?", "Good, you?"),
-("Never Gonna Give You Up","")
+("Never Gonna Give You Up",""),
 ("You have finals coming up?", "Tell me about how well your balancing your time");
 
 INSERT INTO Meme (templateid, textid, image, userid) VALUES 
 (3, 1, '/media/MemeGenerator/admin1.jpg', 1),
-(2, 2, '/media/MemeGenerator/admin2.jpg', 1)
+(2, 2, '/media/MemeGenerator/admin2.jpg', 1),
 (6, 3, '/media/MemeGenerator/admin3.jpg', 1);
 
 INSERT INTO Tag (name) VALUES 
