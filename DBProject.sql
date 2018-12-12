@@ -89,8 +89,7 @@ INSERT INTO Template (image, name) VALUES
 ('static/MemeGenerator/sociallyAwkwardPenguin.jpg', 'Socially Awkward Penguin'),
 ('static/MemeGenerator/oneDoesNotSimply.jpg', 'One Does Not Simply'),
 ('static/MemeGenerator/obama.jpg', 'Obama'),
-('static/MemeGenerator/willyWonka.jpg', 'Willy Wonka')
-;
+('static/MemeGenerator/willyWonka.jpg', 'Willy Wonka');
 
 INSERT INTO User (login) VALUES
 ('Admin'),
@@ -101,11 +100,13 @@ INSERT INTO User (login) VALUES
 
 INSERT INTO Text (top, bottom) VALUES
 ("Hey, what's up?", "Good, you?"),
-("Never Gonna Give You Up","");
+("Never Gonna Give You Up","")
+("You have finals coming up?", "Tell me about how well your balancing your time");
 
 INSERT INTO Meme (templateid, textid, image, userid) VALUES 
 (3, 1, '/media/MemeGenerator/admin1.jpg', 1),
-(2, 2, '/media/MemeGenerator/admin2.jpg', 1);
+(2, 2, '/media/MemeGenerator/admin2.jpg', 1)
+(6, 3, '/media/MemeGenerator/admin3.jpg', 1);
 
 INSERT INTO Tag (name) VALUES 
 ('Funny'),
@@ -117,7 +118,10 @@ INSERT INTO Tag (name) VALUES
 INSERT INTO MemeTag (memeid, tagid) VALUES
 (1, 1),
 (1, 4),
-(2, 3);
+(2, 3),
+(3, 2),
+(3, 1),
+(3, 3);
 
 INSERT INTO TagUser (userid, tagid) VALUES
 (1, 1),
@@ -129,6 +133,7 @@ INSERT INTO TagUser (userid, tagid) VALUES
 INSERT INTO Comment (userid, memeid, comment) VALUES
 (1, 1, 'Only good meme on this site'),
 (1, 1, 'Old but gold'),
-(1, 2, 'Weak effort');
+(1, 2, 'Weak effort'),
+(2, 3, '@me');
 
 
