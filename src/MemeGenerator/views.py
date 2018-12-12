@@ -189,7 +189,7 @@ def makeameme(request):
 
 		# Construct a new meme and save it to the database
 		new_row_meme = Meme(
-			templateid = Template.objects.get(id=meme_id), 
+			templateid = template, 
 			textid = Text.objects.get(top = topText), 
 			image = "/media/MemeGenerator/" + str(random_file_number) + ".jpg", 
 			userid = User.objects.get(login = user)
