@@ -4,6 +4,7 @@ body {
 	color: #1C2321;
 	padding: 0px;
 	margin: 0px;
+	font-size: 16pt;
 }
 
 .header {
@@ -16,6 +17,7 @@ body {
 	white-space: nowrap;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	height: 82px;
+	font-size: 12pt;
 }
 
 .navigation {
