@@ -101,12 +101,14 @@ INSERT INTO User (login) VALUES
 INSERT INTO Text (top, bottom) VALUES
 ("Hey, what's up?", "Good, you?"),
 ("Never Gonna Give You Up",""),
-("You have finals coming up?", "Tell me about how well your balancing your time");
+("You have finals coming up?", "Tell me about how well your balancing your time")
+("When you see your replacement...", "");
 
 INSERT INTO Meme (templateid, textid, image, userid) VALUES 
 (3, 1, '/media/MemeGenerator/admin1.jpg', 1),
 (2, 2, '/media/MemeGenerator/admin2.jpg', 1),
-(6, 3, '/media/MemeGenerator/admin3.jpg', 1);
+(6, 3, '/media/MemeGenerator/admin3.jpg', 1),
+(5, 4, '/media/MemeGenerator/admin4.jpg', 1);
 
 INSERT INTO Tag (name) VALUES 
 ('Funny'),
@@ -121,7 +123,8 @@ INSERT INTO MemeTag (memeid, tagid) VALUES
 (2, 3),
 (3, 2),
 (3, 1),
-(3, 3);
+(3, 3),
+(4, 5);
 
 INSERT INTO TagUser (userid, tagid) VALUES
 (1, 1),
@@ -134,6 +137,6 @@ INSERT INTO Comment (userid, memeid, comment) VALUES
 (1, 1, 'Only good meme on this site'),
 (1, 1, 'Old but gold'),
 (1, 2, 'Weak effort'),
-(2, 3, '@me');
+(3, 3, '@me');
 
 
