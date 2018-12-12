@@ -60,6 +60,7 @@ class Tag(models.Model):
 class Taguser(models.Model):
     userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userid')
     tagid = models.ForeignKey(Tag, models.DO_NOTHING, db_column='tagid')
+    name = models.CharField(max_length=64)
 
     class Meta:
         managed = False
