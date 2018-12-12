@@ -55,6 +55,10 @@ form {
 	width: 11.25%;
 }
 
+option {
+	font-size: inherit;
+}
+
 .content {
 	width: 100%;
 	padding: 0px 0px 20px 0px;
