@@ -27,7 +27,7 @@
 <div class="content">
 	<div class="img-container">
 		<img src="{{ leftMeme.image }}"></img>
-		<h3>Here is a title for the left image!</h3>
+		<h3>This meme was made by {{ leftMeme.login }}</h3>
 		{% for i in leftRange %}
 			{% with leftAuthors|index:i as item %}
 				<p> {{item.0.login}} : {{item.1.comment}} </p>
@@ -42,7 +42,7 @@
 	</div>
 	<div class="img-container">
 		<img src="{{ rightMeme.image }}"></img>
-		<h3>Here is a title for the right image!</h3>
+		<h3>This meme was made by {{ rightMeme.login }}</h3>
 		{% for i in rightRange %}
 			{% with rightAuthors|index:i as item %}
 				<p> {{item.0.login}} : {{item.1.comment}} </p>

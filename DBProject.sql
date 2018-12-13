@@ -101,7 +101,7 @@ INSERT INTO User (login) VALUES
 INSERT INTO Text (top, bottom) VALUES
 ("Hey, what's up?", "Good, you?"),
 ("Never Gonna Give You Up",""),
-("You have finals coming up?", "Tell me about how well your balancing your time"),
+("You have finals coming up?", "Tell me about how well you're balancing your time"),
 ("When you see your replacement...", "");
 
 INSERT INTO Meme (templateid, textid, image, userid) VALUES 
